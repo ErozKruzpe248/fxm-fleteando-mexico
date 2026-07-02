@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Copy-Item \"c:\\\\Users\\\\masch\\\\Downloads\\\\FXM fleteando por mexico\\\\assets\\\\logo-transparente.png\" \"c:\\\\Users\\\\masch\\\\Downloads\\\\FXM fleteando por mexico\\\\assets\\\\logo-transparente-original.png\")"
+    ]
+  }
+}

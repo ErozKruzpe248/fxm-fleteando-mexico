@@ -1,0 +1,610 @@
+/* ============================================
+   FXM – Fleteando México  |  styles.css
+   ============================================ */
+
+/* ---------- Variables --------------------------------------- */
+:root {
+  --red:      #F04D23;
+  --red-dark: #d6401a;
+  --yellow:   #FFD600;
+  --dark:     #1a1a1a;
+  --gray-700: #333333;
+  --gray-500: #666666;
+  --gray-100: #f4f4f4;
+  --white:    #ffffff;
+  --border:   #d8d8d8;
+
+  --font:   -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --max-w:  1100px;
+  --radius: 4px;
+}
+
+/* ---------- Reset & Base ------------------------------------ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--dark);
+  background-color: #ebebeb;
+}
+
+img    { max-width: 100%; display: block; }
+a      { color: inherit; text-decoration: none; }
+ul     { list-style: none; }
+
+/* ---------- Main container ---------------------------------- */
+main {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06), 0 4px 24px rgba(0, 0, 0, 0.07);
+}
+
+/* ---------- Header / Nav ------------------------------------ */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--red-dark);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.22);
+}
+
+nav {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 1.75rem;
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav > a {
+  display: flex;
+  align-items: center;
+}
+
+.site-logo {
+  height: 80px;
+  width: auto;
+  display: block;
+}
+
+footer .site-logo {
+  height: auto;
+  max-height: 150px;
+  margin: 0 auto 1.25rem;
+}
+
+nav ul {
+  display: flex;
+  gap: 2rem;
+}
+
+nav ul a {
+  color: var(--white);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+nav ul a:hover { border-bottom-color: var(--yellow); }
+
+/* ---------- Hero -------------------------------------------- */
+#home {
+  position: relative;
+  min-height: 72vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 5rem 2rem;
+  background-color: var(--dark);
+  background-image: url('assets/hero-final.png');
+  background-size: cover;
+  background-position: center;
+  color: var(--white);
+}
+
+#home::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.55);
+}
+
+#home > * {
+  position: relative;
+}
+
+#home h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+#home p {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: #a0a0a0;
+  max-width: 520px;
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
+}
+
+#home > a {
+  display: inline-block;
+  padding: 0.85rem 2.5rem;
+  background-color: var(--red);
+  color: var(--white);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: var(--radius);
+  transition: background-color 0.2s ease;
+}
+
+#home > a:hover { background-color: var(--red-dark); }
+
+/* ---------- Help Section ------------------------------------ */
+#help {
+  padding: 5rem 2rem;
+  text-align: center;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+
+#help h2 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 1.25rem;
+  display: inline-block;
+}
+
+#help h2::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  background-color: var(--yellow);
+  margin: 0.5rem auto 0;
+}
+
+#help p {
+  color: var(--gray-500);
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+}
+
+/* ---------- Services ---------------------------------------- */
+#services {
+  padding: 5rem 2rem;
+  background-color: var(--gray-100);
+}
+
+#services > h2 {
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 2.5rem;
+}
+
+#services article {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--red);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  margin-bottom: 1.25rem;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+#services article:last-child { margin-bottom: 0; }
+
+#services article:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.11);
+  transform: translateY(-2px);
+}
+
+#services article h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--dark);
+  margin-bottom: 0.6rem;
+}
+
+#services article p {
+  color: var(--gray-500);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+/* ---------- Coverage ---------------------------------------- */
+#coverage {
+  padding: 5rem 2rem;
+  text-align: center;
+  background-color: var(--white);
+}
+
+#coverage h2 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 2.5rem;
+}
+
+#coverage figure {
+  display: inline-block;
+  width: 100%;
+  max-width: var(--max-w);
+}
+
+#coverage img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  display: block;
+}
+
+#coverage figcaption {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--dark);
+  letter-spacing: 0.01em;
+}
+
+/* ---------- Contact / Cotización ---------------------------- */
+#contact {
+  padding: 5rem 2rem;
+  background-color: var(--gray-100);
+}
+
+#contact h2 {
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 2.5rem;
+}
+
+#contact form {
+  max-width: 560px;
+  margin: 0 auto;
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+}
+
+#contact form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Default label style (text inputs) */
+#contact label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--gray-700);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+#contact input[type="text"],
+#contact input[type="date"],
+#contact select {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  font-family: var(--font);
+  font-size: 1rem;
+  color: var(--dark);
+  background-color: var(--white);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Custom select arrow */
+#contact select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.85rem center;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+#contact input[type="text"]:focus,
+#contact input[type="date"]:focus,
+#contact select:focus {
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(240, 77, 35, 0.12);
+}
+
+/* Checkbox labels (wraps the input element) */
+#contact label:has(input[type="checkbox"]) {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+#contact input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  accent-color: var(--red);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* Fieldset & radio */
+#contact fieldset {
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1rem 0.85rem;
+  margin-bottom: 1.25rem;
+}
+
+#contact fieldset legend {
+  padding: 0 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--gray-700);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+#contact fieldset label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  cursor: pointer;
+  margin-top: 0.6rem;
+}
+
+#contact input[type="radio"] {
+  accent-color: var(--red);
+  cursor: pointer;
+}
+
+#contact button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 0.9rem;
+  margin-top: 1.75rem;
+  background-color: var(--red);
+  color: var(--white);
+  font-family: var(--font);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#contact button[type="submit"]:hover { background-color: var(--red-dark); }
+
+/* ---------- Footer ------------------------------------------ */
+footer {
+  background-color: var(--dark);
+  border-top: 3px solid var(--red);
+  padding: 3rem 1.75rem;
+  text-align: center;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06);
+}
+
+footer p {
+  font-size: 0.88rem;
+  color: #888;
+  line-height: 2;
+}
+
+/* ---------- Extended Form Styles ---------------------------- */
+
+/* Number and tel — same appearance as text inputs */
+#contact input[type="number"],
+#contact input[type="tel"] {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  font-family: var(--font);
+  font-size: 1rem;
+  color: var(--dark);
+  background-color: var(--white);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+#contact input[type="number"]:focus,
+#contact input[type="tel"]:focus {
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(240, 77, 35, 0.12);
+}
+
+/* Hide browser spinner arrows on number inputs */
+#contact input[type="number"]::-webkit-outer-spin-button,
+#contact input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#contact input[type="number"] { -moz-appearance: textfield; }
+
+/* Textarea */
+#contact textarea {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  font-family: var(--font);
+  font-size: 1rem;
+  color: var(--dark);
+  background-color: var(--white);
+  outline: none;
+  resize: vertical;
+  min-height: 100px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#contact textarea::placeholder { color: var(--gray-500); opacity: 1; }
+
+#contact textarea:focus {
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(240, 77, 35, 0.12);
+}
+
+/* Small help text under inputs */
+#contact .field-help {
+  font-size: 0.75rem;
+  color: var(--gray-500);
+}
+
+/* Inline validation error message */
+#contact .field-error {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #dc2626;
+  min-height: 1em;
+  display: block;
+}
+
+/* Dimensions group label (mimics label style) */
+#contact .field-group-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--gray-700);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Inline row of three dimension inputs */
+#contact .dims-row {
+  display: flex;
+  gap: 0.75rem;
+}
+
+#contact .dims-row > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+/* ---------- Responsive -------------------------------------- */
+
+/* Tablet+: services 2×2 grid */
+@media (min-width: 640px) {
+  #services {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  #services > h2 {
+    grid-column: 1 / -1;
+    margin-bottom: 2rem;
+  }
+
+  #services article { margin-bottom: 0; }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  nav { padding: 0 1rem; height: 64px; }
+  nav ul { gap: 1rem; }
+  nav ul a { font-size: 0.76rem; letter-spacing: 0.03em; }
+  nav > a  { font-size: 1.05rem; }
+  nav .site-logo { height: 48px; }
+
+  #home     { padding: 4rem 1.25rem; }
+  #help,
+  #services,
+  #coverage,
+  #contact  { padding: 3.5rem 1.25rem; }
+
+  #contact form { padding: 1.75rem 1.25rem; }
+
+  #contact .dims-row { flex-direction: column; }
+
+  footer { padding: 2.5rem 1.25rem; }
+}
+
+/* ---------- Scroll animations -------------------------------- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- WhatsApp floating button ------------------------- */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 200;
+  width: 56px;
+  height: 56px;
+  background-color: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+}

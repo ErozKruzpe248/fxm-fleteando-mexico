@@ -1,0 +1,30 @@
+FXM FLeteando por mexico
+
+
+1. El endpoint de Formspree: https://formspree.io/f/xgojzoav
+
+2. 8 campos del formulario:
+
+CP Origen y CP Destino
+Tipo de servicio (Caja Seca, Refrigerada, Urgente, Programado)
+Dimensiones y Peso
+¿Requiere maniobra de carga? (sí/no)
+¿Requiere maniobra de descarga? (sí/no)
+Fecha requerida
+Carga recurrente o única vez
+Teléfono o correo de contacto
+
+3. 5 secciones del mapa del sitio:
+
+Home — Headline "Tu carga, Nuestra Ruta" + botón "Cotiza tu flete" (ancla a sección 5)
+Cómo podemos ayudarte — texto explicativo del servicio
+Servicios — 4 tarjetas: Caja Seca, Refrigerada, Urgentes, Programados
+Cobertura — mapa de México (imagen estática) + "+2000 unidades en todo México"
+Contacto / Cotización — formulario (los 8 campos de arriba) → Formspree → correo de la clienta
+
+CÓMO TRABAJAMOS (instrucciones para Claude en futuros chats):
+- Soy nuevo en Claude Code, voy aprendiendo - explica el "por qué" de cada paso, no solo el "qué"
+- Trabajamos en baby steps: un cambio a la vez, reviso antes de aceptar
+- Avísame antes de comandos que puedan ser riesgosos o irreversibles
+- Cuando algo no funcione, ayúdame a entender la causa antes de solo "arreglarlo"
+- Soy director de Matangazo (agencia), no soy programador de profesión

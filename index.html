@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FXM - Fleteando México</title>
+    <meta property="og:title" content="FXM - Fleteando México" />
+    <meta property="og:description" content="Soluciones de transporte y flete confiables en todo México." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" href="assets/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="shortcut icon" href="assets/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+    <link rel="manifest" href="assets/site.webmanifest" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="#home" aria-label="Inicio">
+          <img src="assets/logo-transparente.png" alt="Fleteando México" class="site-logo" />
+        </a>
+        <ul>
+          <li><a href="#services">Servicios</a></li>
+          <li><a href="#coverage">Cobertura</a></li>
+          <li><a href="#contact">Cotizar</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" aria-labelledby="hero-title">
+        <h1 id="hero-title">Tu carga, Nuestra Ruta</h1>
+        <p>Soluciones de transporte y flete confiables en todo México.</p>
+        <a href="#contact">Cotiza tu flete</a>
+      </section>
+
+      <section id="help" class="fade-in" aria-labelledby="help-title">
+        <h2 id="help-title">Cómo Podemos Ayudarte</h2>
+        <p>No manejamos una sola flotilla. Accedemos a una red de transportistas
+verificados en todo México para asignarte la unidad exacta que tu carga
+necesita: el tamaño correcto, la ruta correcta, en el tiempo que necesitas.</p>
+        <p>Tú cotizas. Nosotros conseguimos el transporte.</p>
+      </section>
+
+      <section id="services" class="fade-in" aria-labelledby="services-title">
+        <h2 id="services-title">Servicios</h2>
+
+        <article>
+          <h3>Caja Seca</h3>
+          <p>Ideal para manufactura, retail, autopartes y carga general. Unidades
+cerradas que protegen tu mercancía de las condiciones del camino en
+cualquier ruta del país.</p>
+        </article>
+
+        <article>
+          <h3>Carga Refrigerada</h3>
+          <p>Para alimentos, farmacéuticos y cualquier producto que requiera
+temperatura controlada. Unidades con sistema de refrigeración monitoreado
+durante todo el trayecto.</p>
+        </article>
+
+      </section>
+
+      <section id="coverage" class="fade-in" aria-labelledby="coverage-title">
+        <h2 id="coverage-title">Cobertura</h2>
+        <figure>
+          <img src="assets/cobertura-referencia.png" alt="Mapa de cobertura FXM en México" />
+          <figcaption>Cobertura nacional</figcaption>
+        </figure>
+      </section>
+
+      <section id="contact" class="fade-in" aria-labelledby="contact-title">
+        <h2 id="contact-title">Contacto / Cotización</h2>
+        <form action="https://formspree.io/f/xgojzoav" method="POST">
+
+          <div>
+            <label for="tipo-servicio">Tipo de Servicio</label>
+            <select id="tipo-servicio" name="tipo_servicio" required>
+              <option value="" disabled selected>Selecciona un servicio</option>
+              <option value="Caja Seca">Caja Seca</option>
+              <option value="Caja Refrigerada">Caja Refrigerada</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="cp-origen">CP Origen</label>
+            <input id="cp-origen" name="cp_origen" type="text"
+                   pattern="[0-9]{5}" maxlength="5" inputmode="numeric" required />
+            <span class="field-help">5 dígitos</span>
+          </div>
+
+          <div>
+            <label for="cp-destino">CP Destino</label>
+            <input id="cp-destino" name="cp_destino" type="text"
+                   pattern="[0-9]{5}" maxlength="5" inputmode="numeric" required />
+            <span class="field-help">5 dígitos</span>
+          </div>
+
+          <div>
+            <label for="tipo-mercancia">Tipo de Mercancía</label>
+            <select id="tipo-mercancia" name="tipo_mercancia" required>
+              <option value="" disabled selected>Selecciona el tipo</option>
+              <option value="Pallets">Pallets</option>
+              <option value="Cajas">Cajas</option>
+              <option value="Barriles">Barriles</option>
+              <option value="Bidones">Bidones</option>
+              <option value="Neumáticos">Neumáticos</option>
+              <option value="Sacos">Sacos</option>
+              <option value="Carretes">Carretes</option>
+              <option value="Materiales Peligrosos">Materiales Peligrosos</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+
+          <div id="mercancia-otro-wrap" style="display:none">
+            <label for="mercancia-otro">Especifica el tipo de mercancía</label>
+            <input id="mercancia-otro" name="mercancia_otro" type="text" />
+          </div>
+
+          <div class="field-group-dims">
+            <span class="field-group-label">Dimensiones (m)</span>
+            <div class="dims-row">
+              <div>
+                <label for="alto">Alto</label>
+                <input id="alto" name="alto_m" type="number"
+                       step="0.01" min="0" max="20" placeholder="0.00" required />
+              </div>
+              <div>
+                <label for="ancho">Ancho</label>
+                <input id="ancho" name="ancho_m" type="number"
+                       step="0.01" min="0" max="20" placeholder="0.00" required />
+              </div>
+              <div>
+                <label for="profundidad">Profundidad</label>
+                <input id="profundidad" name="profundidad_m" type="number"
+                       step="0.01" min="0" max="20" placeholder="0.00" required />
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <label for="peso">Peso Total (kg)</label>
+            <input id="peso" name="peso_total_kg" type="number"
+                   min="0" max="60000" step="0.01" required />
+          </div>
+
+          <fieldset>
+            <legend>Maniobra de Carga</legend>
+            <label>
+              <input type="radio" name="maniobra_carga" value="Sí" required />
+              Sí
+            </label>
+            <label>
+              <input type="radio" name="maniobra_carga" value="No" />
+              No
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Maniobra de Descarga</legend>
+            <label>
+              <input type="radio" name="maniobra_descarga" value="Sí" required />
+              Sí
+            </label>
+            <label>
+              <input type="radio" name="maniobra_descarga" value="No" />
+              No
+            </label>
+          </fieldset>
+
+          <div>
+            <label for="fecha-recoleccion">Fecha de Recolección</label>
+            <input id="fecha-recoleccion" name="fecha_recoleccion" type="date" required />
+          </div>
+
+          <div>
+            <label for="frecuencia-carga">Frecuencia de Carga</label>
+            <select id="frecuencia-carga" name="frecuencia_carga" required>
+              <option value="" disabled selected>Selecciona la frecuencia</option>
+              <option value="Única Vez">Única Vez</option>
+              <option value="Semanal">Semanal</option>
+              <option value="Mensual">Mensual</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="nombre">Nombre</label>
+            <input id="nombre" name="nombre" type="text" required />
+            <span class="field-error" id="nombre-error" aria-live="polite"></span>
+          </div>
+
+          <div>
+            <label for="empresa">Empresa</label>
+            <input id="empresa" name="empresa" type="text" required />
+          </div>
+
+          <div>
+            <label for="telefono">Teléfono</label>
+            <input id="telefono" name="telefono" type="tel"
+                   pattern="[0-9]{10}" maxlength="10" inputmode="numeric" required />
+            <span class="field-help">10 dígitos</span>
+            <span class="field-error" id="telefono-error" aria-live="polite"></span>
+          </div>
+
+          <div>
+            <label for="comentarios">Comentarios Adicionales</label>
+            <textarea id="comentarios" name="comentarios" rows="4"
+                      placeholder="Cuéntanos si tienes más especificaciones de tu flete"></textarea>
+          </div>
+
+          <button type="submit">Enviar cotización</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <img src="assets/logo-blanco.png" alt="Fleteando México" class="site-logo footer-logo" />
+      <p>Contacto: Guadalupe.lozano@fleteandopormexico.com</p>
+      <p>Teléfono: +52 81 1016 9062</p>
+    </footer>
+    <script>
+      (function() {
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(function(el) {
+          observer.observe(el);
+        });
+      })();
+
+      (function () {
+        var dateInput = document.getElementById('fecha-recoleccion');
+        var today    = new Date();
+        var maxDate  = new Date(today.getFullYear() + 1, today.getMonth(), today.getDate());
+        var toISO    = function (d) { return d.toISOString().split('T')[0]; };
+        var todayStr = toISO(today);
+        var maxStr   = toISO(maxDate);
+
+        dateInput.min = todayStr;
+        dateInput.max = maxStr;
+
+        var errorSpan = document.createElement('span');
+        errorSpan.className = 'field-error';
+        errorSpan.setAttribute('aria-live', 'polite');
+        dateInput.insertAdjacentElement('afterend', errorSpan);
+
+        function validateDate() {
+          var v = dateInput.value;
+          var msg = '';
+          if (v && v < todayStr) {
+            msg = 'La fecha no puede ser anterior a hoy.';
+          } else if (v && v > maxStr) {
+            msg = 'La fecha no puede superar un año a partir de hoy.';
+          }
+          dateInput.setCustomValidity(msg);
+          errorSpan.textContent = msg;
+        }
+
+        dateInput.addEventListener('change', validateDate);
+        dateInput.addEventListener('input',  validateDate);
+      })();
+
+      (function () {
+        var nombreInput = document.getElementById('nombre');
+        var nombreError = document.getElementById('nombre-error');
+
+        function validateNombre() {
+          var msg = '';
+          if (nombreInput.value !== '' && !/[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]/.test(nombreInput.value)) {
+            msg = 'El nombre debe contener al menos una letra.';
+          }
+          nombreInput.setCustomValidity(msg);
+          nombreError.textContent = msg;
+        }
+
+        nombreInput.addEventListener('change', validateNombre);
+        nombreInput.addEventListener('input',  validateNombre);
+      })();
+
+      (function () {
+        var telInput   = document.getElementById('telefono');
+        var telError   = document.getElementById('telefono-error');
+
+        telInput.addEventListener('input', function () {
+          var cleaned = telInput.value.replace(/[^0-9]/g, '');
+          if (telInput.value !== cleaned) {
+            var pos = telInput.selectionStart - (telInput.value.length - cleaned.length);
+            telInput.value = cleaned;
+            telInput.setSelectionRange(pos, pos);
+          }
+          validateTel();
+        });
+
+        telInput.addEventListener('change', validateTel);
+
+        function validateTel() {
+          var msg = '';
+          if (telInput.value !== '' && !/^[0-9]{10}$/.test(telInput.value)) {
+            msg = 'El teléfono debe tener exactamente 10 dígitos numéricos.';
+          }
+          telInput.setCustomValidity(msg);
+          telError.textContent = msg;
+        }
+      })();
+
+      document.querySelectorAll('#contact input[type="number"]').forEach(function (input) {
+        input.addEventListener('keydown', function (e) {
+          if (['e', 'E', '+', '-'].includes(e.key)) e.preventDefault();
+        });
+      });
+
+      document.querySelectorAll('#contact input[type="number"][max]').forEach(function (input) {
+        var errorSpan = document.createElement('span');
+        errorSpan.className = 'field-error';
+        errorSpan.setAttribute('aria-live', 'polite');
+        input.insertAdjacentElement('afterend', errorSpan);
+
+        function validate() {
+          var v   = parseFloat(input.value);
+          var max = parseFloat(input.max);
+          var msg = '';
+          if (input.value !== '' && !isNaN(v) && v > max) {
+            msg = 'El valor no puede superar ' + max.toLocaleString('es-MX') + '.';
+          }
+          input.setCustomValidity(msg);
+          errorSpan.textContent = msg;
+        }
+
+        input.addEventListener('change', validate);
+        input.addEventListener('input',  validate);
+      });
+
+      document.getElementById('tipo-mercancia').addEventListener('change', function () {
+        var wrap  = document.getElementById('mercancia-otro-wrap');
+        var input = document.getElementById('mercancia-otro');
+        if (this.value === 'Otro') {
+          wrap.style.display = 'flex';
+          input.required = true;
+        } else {
+          wrap.style.display = 'none';
+          input.required = false;
+          input.value = '';
+        }
+      });
+    </script>
+
+    <a href="https://wa.me/528110169062?text=Hola%2C%20me%20interesa%20cotizar%20un%20flete%20con%20FXM"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="whatsapp-btn"
+       aria-label="Contactar por WhatsApp">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="28" height="28">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+      </svg>
+    </a>
+  </body>
+</html>
